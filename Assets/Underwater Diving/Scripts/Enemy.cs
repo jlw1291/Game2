@@ -14,8 +14,11 @@ public class Enemy : MonoBehaviour {
 
 	private Rigidbody2D myRigidbody;
 
+	//Combat Variable Initialization for health
+	public int maxHealth = 100;
+	int currentHealth;
 
-
+	public Animator animator;
  
 
 	// Use this for initialization
@@ -25,7 +28,9 @@ public class Enemy : MonoBehaviour {
 
 		turnTimer = 0;
 		timeTrigger = 3f;
-		 
+
+		//Initialize health on start
+		currentHealth = maxHealth;
 	}
 
 	// Update is called once per frame
@@ -41,6 +46,25 @@ public class Enemy : MonoBehaviour {
 
 
 	}
+
+	public void TakeDamage(int damage)
+    {
+		currentHealth -= damage;
+		//play hurt animation
+		animator.SetTrigger("Hurt");
+
+		if(currentHealth <=0)
+        {
+			Die();
+        }			
+    }
+	void Die()
+    {
+		animator.SetBool("IsDead",true);
+		Debug.Log("Enemy died!");
+		GetComponent<Collider2D>().enabled = false;
+		this.enabled = false;
+    }
 
 
 	void OnTriggerEnter2D(Collider2D other){
