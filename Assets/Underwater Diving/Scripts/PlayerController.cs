@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour{
 
 
 
-		myAnim.SetFloat ("Speed", Mathf.Abs(myRigidBody.velocity.x));
+		//myAnim.SetFloat ("Speed", Mathf.Abs(myRigidBody.velocity.x));
 
 	 
 		
