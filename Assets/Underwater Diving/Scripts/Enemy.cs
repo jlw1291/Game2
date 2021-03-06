@@ -16,9 +16,10 @@ public class Enemy : MonoBehaviour {
 
 	//Combat Variable Initialization for health
 	public int maxHealth = 100;
-	int currentHealth;
+	protected int currentHealth;
 
 	public Animator animator;
+	bool alive = true;
  
 
 	// Use this for initialization
@@ -35,19 +36,15 @@ public class Enemy : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update (){
-		myRigidbody.velocity = new Vector3 (myRigidbody.transform.localScale.x * speed, myRigidbody.velocity.y, 0f);
-
-		turnTimer += Time.deltaTime;
-		if(turnTimer >= timeTrigger){
-			turnAround ();
-			turnTimer = 0;
+		if(alive){
+			myRigidbody.velocity = new Vector3 (myRigidbody.transform.localScale.x * speed, myRigidbody.velocity.y, 0f);
+		}else{
+			Destroy (gameObject);
 		}
-
-
-
+	
 	}
 
-	public void TakeDamage(int damage)
+	public virtual void TakeDamage(int damage)
     {
 		currentHealth -= damage;
 		//play hurt animation
@@ -56,6 +53,7 @@ public class Enemy : MonoBehaviour {
 		if(currentHealth <=0)
         {
 			Die();
+			
         }			
     }
 	void Die()
@@ -63,24 +61,22 @@ public class Enemy : MonoBehaviour {
 		animator.SetBool("IsDead",true);
 		Debug.Log("Enemy died!");
 		GetComponent<Collider2D>().enabled = false;
-		this.enabled = false;
+		Destroy (transform.parent.gameObject);
+		
+		
     }
 
 
 	void OnTriggerEnter2D(Collider2D other){
-
+		Debug.Log("Triggered!!");
 		if(other.tag == "Player" && thePlayer.rushing){
+
 			Instantiate (death, gameObject.transform.position, gameObject.transform.rotation);
+			transform.localScale = new Vector3 (0f, 0f, 0f);
 			Destroy (gameObject);
 		}
 
 	}
 
-	void turnAround(){
-		if (transform.localScale.x == 1) {
-			transform.localScale = new Vector3 (-1f, 1f, 1f);
-		} else {
-			transform.localScale = new Vector3 (1f,1f,1f);
-		}
-	}
+	
 }

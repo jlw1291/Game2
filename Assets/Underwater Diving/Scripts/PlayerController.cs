@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour{
 
 	private Animator myAnim;
 
-	public GameObject bubbles;
+
 
 	// Use this for initialization
 	void Start (){
@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour{
 		if(Input.GetButtonDown("Jump") && !rushing ){
 			rushing = true;
 			speedMod = 2;
-			Instantiate (bubbles, gameObject.transform.position, gameObject.transform.rotation);
+			//Instantiate (bubbles, gameObject.transform.position, gameObject.transform.rotation);
 			movePlayer ();
 		}	
 	}
