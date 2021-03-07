@@ -63,6 +63,9 @@ public class Enemy : MonoBehaviour {
 		animator.SetBool("IsDead",true);
 		Debug.Log("Enemy died!");
 		GetComponent<Collider2D>().enabled = false;
+
+		//Enable the Destroy(gameObject) if you want the fish to disappear completely from the scene
+		//Destroy(gameObject);
 		this.enabled = false;
     }
 

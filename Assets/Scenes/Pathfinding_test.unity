@@ -191,6 +191,23 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2105619633957055195}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &262069558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262069557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9608d209ea1884745841726a7230acf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  death: {fileID: 0}
+  speed: 0.3
+  timeTrigger: 0
+  maxHealth: 100
+  animator: {fileID: 0}
 --- !u!58 &262069561
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -564,11 +581,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 833448843}
   attackPoint: {fileID: 872710063}
+  damagePoint: {fileID: 0}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 9216
   attackRange: 0.5
   attackDamage: 10
+  player_health: 100
 --- !u!95 &833448843 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2577816447225377148, guid: 17e40f4a2f7b94845bf706d456685081,
@@ -15346,6 +15365,36 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
+--- !u!1 &2137541597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2137541598}
+  m_Layer: 12
+  m_Name: DamagePoint
+  m_TagString: Player
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2137541598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137541597}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.009, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 833448845}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2105619633957055195
 PrefabInstance:
   m_ObjectHideFlags: 0
