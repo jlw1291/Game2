@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour {
 	private PlayerController thePlayer;
 	public GameObject death;
 
+	public GameObject drop;
+
 	public float speed = 0.3f;
 
 	private float turnTimer;
@@ -61,6 +63,8 @@ public class Enemy : MonoBehaviour {
 		animator.SetBool("IsDead",true);
 		Debug.Log("Enemy died!");
 		GetComponent<Collider2D>().enabled = false;
+		Instantiate (drop, gameObject.transform.position, gameObject.transform.rotation);
+			
 		Destroy (transform.parent.gameObject);
 		
 		
