@@ -16,12 +16,16 @@ public class PlayerController : MonoBehaviour{
 
 	private Animator myAnim;
 
+	private Inventory inventory;
+
 
 
 	// Use this for initialization
 	void Start (){
 		myRigidBody = GetComponent<Rigidbody2D> ();	
 		myAnim = GetComponent<Animator> ();
+
+		inventory = new Inventory();
 	}
 	
 	// Update is called once per frame

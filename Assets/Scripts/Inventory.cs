@@ -1,31 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using InventoryReasource;
 
 public class Inventory : MonoBehaviour
 {
-    public List<InventoryReasourceClass> items; 
+    private List<ResourceItem> itemList;
 
-    void Start(){
-        BuildInventory();
+    public Inventory(){
+    	itemList = new List<ResourceItem>();
     }
 
-    void BuildInventory(){
-        items = new List<InventoryReasourceClass>(); 
+    public void addItem(ResourceItem item){
+    	itemList.Add(item);
     }
-
-    public void addItem(InventoryReasourceClass r){
-        Debug.Log("Attempting to Collect: " + r.Name);
-    	items.Add(r);
-        string item_List = "List: ";
-        foreach(var i in items) {
-            item_List += " " + i.Name;
-        }
-        Debug.Log(item_List);
-        Debug.Log("Inventory Length: " + items.Capacity);
-   
-    }
-
-
 }

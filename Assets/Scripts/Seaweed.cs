@@ -7,6 +7,7 @@ public class Seaweed : Interactable
     //private int currentHealth;
 
     public int minimum_damage;
+    public GameObject drop;
 
     
     public override void StartUpRoutine(){
@@ -24,6 +25,7 @@ public class Seaweed : Interactable
 
             if(currentHealth <=0)
             {
+                Instantiate (drop, gameObject.transform.position, gameObject.transform.rotation);
                 Destroy (gameObject);
             }
         }			
