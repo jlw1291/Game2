@@ -96,14 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b40ba9c90de2a43dba8776e10c8b202f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  death: {fileID: 0}
-  drop: {fileID: 0}
-  speed: 0.3
-  timeTrigger: 0
   maxHealth: 100
-  animator: {fileID: 0}
-  inventory: {fileID: 5905406505283200742, guid: 58700f5a2f81346fbba6f345c10df5a7,
-    type: 3}
+  itemID: 5
 --- !u!61 &1443872470883436860
 BoxCollider2D:
   m_ObjectHideFlags: 0

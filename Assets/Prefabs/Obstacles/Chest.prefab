@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7702384183568540239}
   - component: {fileID: 7702384183568540236}
-  - component: {fileID: 7702384183568540237}
   - component: {fileID: 7702384183568540242}
   - component: {fileID: 7702384183568540243}
   m_Layer: 13
@@ -84,27 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &7702384183568540237
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7702384183568540240}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!61 &7702384183568540242
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,11 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f13ed250e25d0450082c2ddaa9917b1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  death: {fileID: 0}
-  drop: {fileID: 0}
-  speed: 0.3
-  timeTrigger: 0
   maxHealth: 100
-  animator: {fileID: 0}
   reasource: {fileID: 1795092695074388597, guid: be66a980ae7fe40898c15c7b4668a700,
     type: 3}

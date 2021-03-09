@@ -1,19 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using InventoryReasource;
+
 
 public class Reasource : Interactable
 {
+	public ResouceItemType itemID;
 
     public override void TakeDamage(int damage){
-    	InventoryReasourceClass r =  new InventoryReasourceClass(gameObject.name);
+    	ResourceItem r =  new ResourceItem(itemID, 1);
 
 
     	thePlayer.GetComponent<Inventory>().addItem( r );
     	
-    	Debug.Log("NUE Collected: " + r.Name);
+    	Debug.Log("NUE Collected: " + r.itemType);
 		
 		Destroy (gameObject);			
 	}
+
+
 }
