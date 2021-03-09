@@ -8,7 +8,7 @@ public class PlayerCombat : MonoBehaviour
     public Animator animator;
 
     public Transform attackPoint;
-    public Transform damagePoint; //Notes the location of which NUE is damaged if touched by enemy collider
+    public Transform damagePoint; //Notes the location of which NUE is damaged if touched by enemy collider, make sure damage point is added to the nue_player
     public LayerMask enemyLayers;
 
     public float attackRange = 0.5f;
