@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Seaweed : Enemy
+public class Seaweed : Interactable
 {
     //private int currentHealth;
 
     public int minimum_damage;
 
-    void Start()
-    {
+    
+    public override void StartUpRoutine(){
         currentHealth = maxHealth;
     }
-   
     
 
 

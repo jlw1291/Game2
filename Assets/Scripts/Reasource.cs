@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using InventoryReasource;
 
-public class Reasource : Enemy
+public class Reasource : Interactable
 {
 
-	public GameObject player;
+	
+
+	/*void Start(){
+		thePlayer = FindObjectOfType<PlayerController> ();	
+	}*/
 
     public override void TakeDamage(int damage){
     	//new InventoryReasource(gameObject.name);
-    	player.GetComponent<Inventory>().addItem( new InventoryReasourceClass(gameObject.name));
+    	thePlayer.GetComponent<Inventory>().addItem( new InventoryReasourceClass(gameObject.name));
 		
 		Destroy (gameObject);			
 	}
