@@ -77,12 +77,6 @@ public class PlayerController : MonoBehaviour{
 		}	
 	}
 
-	public void hurt(){
-		if(!rushing){
-			gameObject.GetComponent<Animator> ().Play ("PlayerHurt");		
-		}
-
-	}
 
 
 }

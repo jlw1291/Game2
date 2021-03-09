@@ -28,6 +28,7 @@ public class PlayerCombat : MonoBehaviour
         }
         Hurt();
     }
+    
     void Attack()
     {
         //Play Attack Animation

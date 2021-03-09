@@ -7,18 +7,23 @@ public class Inventory : MonoBehaviour
 {
     public List<InventoryReasourceClass> items; 
 
+    void Start(){
+        BuildInventory();
+    }
+
     void BuildInventory(){
         items = new List<InventoryReasourceClass>(); 
     }
 
     public void addItem(InventoryReasourceClass r){
-
+        Debug.Log("Attempting to Collect: " + r.Name);
     	items.Add(r);
-    	
-        foreach(InventoryReasourceClass s in items){
-            Debug.Log("inventory:" + s.Name);  
+        string item_List = "List: ";
+        foreach(var i in items) {
+            item_List += " " + i.Name;
         }
-        Debug.Log("added :" + r.Name);
+        Debug.Log(item_List);
+        Debug.Log("Inventory Length: " + items.Capacity);
    
     }
 

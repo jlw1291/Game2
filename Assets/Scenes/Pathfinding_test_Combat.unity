@@ -192,6 +192,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3715946986328411042, guid: 92746eca94eed4bf9a5ef1e20b2bf291,
+        type: 3}
+      propertyPath: damagePoint
+      value: 
+      objectReference: {fileID: 1006574200}
+    - target: {fileID: 3715946986328411042, guid: 92746eca94eed4bf9a5ef1e20b2bf291,
+        type: 3}
+      propertyPath: damageRange
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3715946986328411046, guid: 92746eca94eed4bf9a5ef1e20b2bf291,
         type: 3}
       propertyPath: m_RootOrder
@@ -13788,6 +13798,12 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!4 &1006574200 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3715946987238779893, guid: 92746eca94eed4bf9a5ef1e20b2bf291,
+    type: 3}
+  m_PrefabInstance: {fileID: 168946297}
+  m_PrefabAsset: {fileID: 0}
 --- !u!213 &1275568247
 Sprite:
   m_ObjectHideFlags: 0

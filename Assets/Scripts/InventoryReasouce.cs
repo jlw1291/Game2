@@ -11,6 +11,7 @@ namespace InventoryReasource{
 
 	    public InventoryReasourceClass(string name)
 	    {
+	        Debug.Log("Creating: " + name);
 	        this.Name = name;
 	        //this.Go = 
 	    }

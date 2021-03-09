@@ -6,15 +6,13 @@ using InventoryReasource;
 public class Reasource : Interactable
 {
 
-	
-
-	/*void Start(){
-		thePlayer = FindObjectOfType<PlayerController> ();	
-	}*/
-
     public override void TakeDamage(int damage){
-    	//new InventoryReasource(gameObject.name);
-    	thePlayer.GetComponent<Inventory>().addItem( new InventoryReasourceClass(gameObject.name));
+    	InventoryReasourceClass r =  new InventoryReasourceClass(gameObject.name);
+
+
+    	thePlayer.GetComponent<Inventory>().addItem( r );
+    	
+    	Debug.Log("NUE Collected: " + r.Name);
 		
 		Destroy (gameObject);			
 	}
