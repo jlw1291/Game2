@@ -10,7 +10,7 @@ public class Gear : Interactable
     	ResourceItem r =  new ResourceItem(itemID, 1);
 
     	thePlayer.GetComponent<Inventory>().addItem( r );
-    	
+    	thePlayer.GetComponent<PlayerController>().updateInventory();
     	Debug.Log("NUE Collected: " + r.itemType);
 		
 		Destroy (gameObject);			

@@ -27,24 +27,24 @@ public class PlayerController : MonoBehaviour{
 	void Start (){
 		myRigidBody = GetComponent<Rigidbody2D> ();	
 		myAnim = GetComponent<Animator> ();
-
+		print("Hello");
 		inventory = new Inventory();
-		//uiInventory.setInventory(inventory);
+		uiInventory.setInventory(inventory);
+	}
+
+	public void updateInventory(){
+		uiInventory.RefreshInventoryItems();
 	}
 	
 	// Update is called once per frame
 	void Update (){
-
 		resetBoostTime ();
 		controllerManager ();
-
-
-
 		//myAnim.SetFloat ("Speed", Mathf.Abs(myRigidBody.velocity.x));
 
-	 
-		
 	}
+
+
 
 	void controllerManager (){
 		if (Input.GetAxisRaw ("Horizontal") > 0f) {

@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  itemID: 3
+  itemID: 4
 --- !u!61 &8559247856282326753
 BoxCollider2D:
   m_ObjectHideFlags: 0

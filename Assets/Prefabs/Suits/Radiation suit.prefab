@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  itemID: 9
+  itemID: 10
 --- !u!61 &6519948679470691077
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.55, y: 12.29}
+    oldSize: {x: 9, y: 12.8}
     newSize: {x: 4.55, y: 12.29}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

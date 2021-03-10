@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum ResouceItemType  {
+	None,
 	Seaweed,
 	Fishcan,
 	Wood,
@@ -20,7 +21,7 @@ public enum ResouceItemType  {
 }
 
 
-public class ResourceItem : MonoBehaviour
+public class ResourceItem 
 {
     
 
@@ -33,5 +34,6 @@ public class ResourceItem : MonoBehaviour
     	amount = a;
     }
 
+    
 }
 

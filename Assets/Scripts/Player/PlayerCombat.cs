@@ -41,6 +41,7 @@ public class PlayerCombat : MonoBehaviour
             Debug.Log("We hit" + enemy.name);
             enemy.GetComponent<Interactable>().TakeDamage(attackDamage);
         }
+        
     }
 
     //Makes Player invulnerable if hit recently
