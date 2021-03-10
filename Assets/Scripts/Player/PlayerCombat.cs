@@ -48,7 +48,7 @@ public class PlayerCombat : MonoBehaviour
     void Hurt()
     {
         //Play Hurt Animation
-
+        animator.SetTrigger("Punch_Attack");
         //Detect enemies who are touching the player
         Collider2D[] enemiesContact = Physics2D.OverlapCircleAll(damagePoint.position, damageRange, enemyLayers);
         
