@@ -11,7 +11,7 @@ public class UI_Inventory : MonoBehaviour
     
 
 
-    /*private void Awake(){
+    private void Awake(){
     	itemSlotSuit = transform.Find("itemSlotSuit");
     }
 
@@ -32,7 +32,7 @@ public class UI_Inventory : MonoBehaviour
 	Harpoon,
 	RadSuit,
 	HeatSuit,
-	Fins
+	Fins*/
     	List<ResourceItem> list = inventory.GetItemList();
     	foreach(ResourceItem item in inventory.GetItemList()){
     		if((item.itemType == ResouceItemType.HeatSuit || item.itemType == ResouceItemType.RadSuit) && item.amount >= 1){
@@ -41,7 +41,7 @@ public class UI_Inventory : MonoBehaviour
     		}
 
     	}
-    }*/
+    }
 
 }
 

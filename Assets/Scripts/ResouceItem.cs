@@ -14,7 +14,8 @@ public enum ResouceItemType  {
 	Harpoon,
 	RadSuit,
 	HeatSuit,
-	Fins
+	Fins,
+	Lamp
 
 }
 
