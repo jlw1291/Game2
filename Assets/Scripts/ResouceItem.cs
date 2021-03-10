@@ -17,11 +17,14 @@ public enum ResouceItemType  {
 	Fins
 
 }
+
+
 public class ResourceItem : MonoBehaviour
 {
     
 
     public ResouceItemType itemType;
+
     public int amount;
 
     public ResourceItem(ResouceItemType i, int a){

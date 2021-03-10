@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour{
 
 	private Animator myAnim;
 
+
+	[SerializeField] private UI_Inventory uiInventory;
+
 	private Inventory inventory;
 
 
@@ -26,6 +29,7 @@ public class PlayerController : MonoBehaviour{
 		myAnim = GetComponent<Animator> ();
 
 		inventory = new Inventory();
+		//uiInventory.setInventory(inventory);
 	}
 	
 	// Update is called once per frame
