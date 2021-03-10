@@ -421,6 +421,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTransform: {fileID: 1571778857}
+--- !u!4 &851804210 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3715946987238779893, guid: 92746eca94eed4bf9a5ef1e20b2bf291,
+    type: 3}
+  m_PrefabInstance: {fileID: 1571778848}
+  m_PrefabAsset: {fileID: 0}
 --- !u!213 &911004713
 Sprite:
   m_ObjectHideFlags: 0
@@ -14186,6 +14192,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3715946986328411042, guid: 92746eca94eed4bf9a5ef1e20b2bf291,
+        type: 3}
+      propertyPath: damagePoint
+      value: 
+      objectReference: {fileID: 851804210}
     - target: {fileID: 3715946986328411046, guid: 92746eca94eed4bf9a5ef1e20b2bf291,
         type: 3}
       propertyPath: m_RootOrder
