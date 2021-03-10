@@ -28,22 +28,45 @@ public class PlayerCombat : MonoBehaviour
         }
         Hurt();
     }
-    
+
     void Attack()
     {
-        //Play Attack Animation
-        animator.SetTrigger("Attack");
-        
-       string weapon = this.GetComponent<Inventory>().GetMeleeString();
-        Debug.Log(weapon);
+        //Check for Melee Attack  type, set damage, and play appropriate Animation
+        Debug.Log("Current Weapon is:" + this.GetComponent<Inventory>().GetMeleeString());
+        string meleeWeapon = this.GetComponent<Inventory>().GetMeleeString();
+
+        //Checks current weapon to determine attack damage and the animation that needs to be played
+        if (meleeWeapon == "none")
+        {
+            attackDamage = 10;
+            animator.SetTrigger("Punch_Attack");
+        }
+        else if (meleeWeapon == "Knife")
+        {
+            attackDamage = 20;
+            animator.SetTrigger("Knife_Attack");
+        }
+        else if (meleeWeapon == "Spear")
+        {
+            attackDamage = 30;
+            animator.SetTrigger("Spear_Attack");
+        }
+        else if (meleeWeapon == "Trident")
+        {
+            attackDamage = 40;
+            animator.SetTrigger("Trident_Attack");
+        }
+
         //Detect enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         //Damage the enemies
-        foreach(Collider2D enemy in hitEnemies)
+        foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log("We hit" + enemy.name);
             enemy.GetComponent<Interactable>().TakeDamage(attackDamage);
+            Debug.Log(enemy.name + "took " + attackDamage + " points of damage!");
         }
+
     }
 
     //Makes Player invulnerable if hit recently
