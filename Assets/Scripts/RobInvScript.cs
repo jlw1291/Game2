@@ -124,6 +124,19 @@ public class RobInvScript : MonoBehaviour
         }
     }
 
+    public bool ShootGun()
+    {
+        if(ammo>=1)
+        {
+            ammo--;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public void CraftError()
     {
         //display crafting error message "You don't have the required materials"
