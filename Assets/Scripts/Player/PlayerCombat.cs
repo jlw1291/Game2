@@ -32,7 +32,10 @@ public class PlayerCombat : MonoBehaviour
     void Attack()
     {
         //Play Attack Animation
-        animator.SetTrigger("Punch_Attack");
+        animator.SetTrigger("Attack");
+        
+       string weapon = this.GetComponent<Inventory>().GetMeleeString();
+        Debug.Log(weapon);
         //Detect enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         //Damage the enemies
@@ -48,7 +51,7 @@ public class PlayerCombat : MonoBehaviour
     void Hurt()
     {
         //Play Hurt Animation
-        animator.SetTrigger("Punch_Attack");
+       // 
         //Detect enemies who are touching the player
         Collider2D[] enemiesContact = Physics2D.OverlapCircleAll(damagePoint.position, damageRange, enemyLayers);
         
@@ -63,6 +66,7 @@ public class PlayerCombat : MonoBehaviour
                 else
                 {
                     Debug.Log("We got hit by " + touching.name);
+                    animator.SetTrigger("Hurt");
                     player_health = player_health - 10;
                     invincible = DateTime.Now.AddSeconds(2);//Change this value to alter invulnerability time
                 }
