@@ -8,12 +8,18 @@ public class PlayerCombat : MonoBehaviour
     public Animator animator;
 
     public Transform attackPoint;
+    public Transform harpoonPoint;//Attack point for harpoon
     public Transform damagePoint; //Notes the location of which NUE is damaged if touched by enemy collider
     public LayerMask enemyLayers;
 
+    //Range for melee weapons
     public float attackRange = 0.5f;
     public int attackDamage = 10;
 
+    //Range for Harpoon
+    public float harpoonRange = 2.0f;
+
+    //Range for being hurt
     public float damageRange = 0.5f;
     public int hurtDamage = 10;
 
@@ -26,6 +32,10 @@ public class PlayerCombat : MonoBehaviour
         {
             Attack();
         }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Fire_Harpoon();
+        }
         Hurt();
     }
 
@@ -34,6 +44,7 @@ public class PlayerCombat : MonoBehaviour
         //Check for Melee Attack  type, set damage, and play appropriate Animation
         Debug.Log("Current Weapon is:" + this.GetComponent<Inventory>().GetMeleeString());
         string meleeWeapon = this.GetComponent<Inventory>().GetMeleeString();
+        //meleeWeapon = "Harpoon";
 
         //Checks current weapon to determine attack damage and the animation that needs to be played
         if (meleeWeapon == "none")
@@ -68,7 +79,35 @@ public class PlayerCombat : MonoBehaviour
         }
 
     }
+    void Fire_Harpoon()
+    {
+        //Check if the player has the harpoon, set damage, and play appropriate Animation
+        
+        bool has_Harpoon = this.GetComponent<Inventory>().GetRange();
+        Debug.Log("Does Player have the harpoon? " + this.GetComponent<Inventory>().GetRange());
 
+        //Test the animation, comment out the line below when not testing
+        //has_Harpoon = true;
+        if (has_Harpoon)
+        {
+            //Debug Alert
+            Debug.Log("Player has the harpoon! Commence firing sequence!");
+            //Play Harpoon animation
+            animator.SetTrigger("Harpoon_Attack");
+            attackDamage = 25;
+            //Detect enemies in range of attack
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(harpoonPoint.position, harpoonRange, enemyLayers);
+            //Damage the enemies
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                Debug.Log("Harpoon hit " + enemy.name + "!");
+                enemy.GetComponent<Interactable>().TakeDamage(attackDamage);
+                Debug.Log(enemy.name + "took " + attackDamage + " points of damage!");
+            }
+        }
+
+       
+    }
     //Makes Player invulnerable if hit recently
     DateTime invincible = DateTime.Now;
     void Hurt()
@@ -84,7 +123,7 @@ public class PlayerCombat : MonoBehaviour
             {
                 //Ignore if the colliding body is NUE's
                 if (touching.name == "Nue_Player")
-                    Debug.Log("No damage dealt, touched Player's 2DBody");
+                    continue;
                 //
                 else
                 {
@@ -108,6 +147,7 @@ public class PlayerCombat : MonoBehaviour
         {
             Gizmos.DrawWireSphere(attackPoint.position, attackRange);
             Gizmos.DrawWireSphere(damagePoint.position, damageRange);
+            Gizmos.DrawWireSphere(harpoonPoint.position, harpoonRange);
         }
     }
 }

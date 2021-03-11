@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3528886587849690568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5882168174628406967}
+  m_Layer: 10
+  m_Name: HarpoonPoint
+  m_TagString: Player
+  m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5882168174628406967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3528886587849690568}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.005420065, y: 0.000000047683717, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3715946986328411046}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3715946986328411052
 GameObject:
   m_ObjectHideFlags: 0
@@ -36,6 +66,7 @@ Transform:
   m_Children:
   - {fileID: 3715946986287980420}
   - {fileID: 3715946987238779893}
+  - {fileID: 5882168174628406967}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -175,12 +206,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3715946986328411040}
   attackPoint: {fileID: 3715946986287980420}
-  damagePoint: {fileID: 0}
+  harpoonPoint: {fileID: 5882168174628406967}
+  damagePoint: {fileID: 3715946987238779893}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 9216
   attackRange: 0.5
   attackDamage: 10
+  harpoonRange: 0
   damageRange: 0.5
   hurtDamage: 10
   player_health: 100
