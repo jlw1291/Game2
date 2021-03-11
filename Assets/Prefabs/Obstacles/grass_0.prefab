@@ -117,12 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d726e2621f794d88a5f1488b8b78254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  death: {fileID: 0}
-  speed: 0.3
-  timeTrigger: 0
   maxHealth: 8
-  animator: {fileID: 0}
-  minimum_damage: 5
+  minimum_damage: 20
 --- !u!61 &3545128461816014119
 BoxCollider2D:
   m_ObjectHideFlags: 0
