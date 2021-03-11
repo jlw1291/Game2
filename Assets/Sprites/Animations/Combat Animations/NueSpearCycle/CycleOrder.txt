@@ -1,0 +1,3 @@
+Heya Lane 
+Order for these sprites is
+ILDE--->SPEAR_PREP--->SPEAR--->IDLE
